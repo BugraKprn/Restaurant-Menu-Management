@@ -1,0 +1,31 @@
+/*font Variables*/
+$mon: 'Montserrat', sans-serif;
+$play: 'Playfair Display', serif;
+$lora: 'Lora', serif;
+$open: 'Open Sans', sans-serif;
+$lato: 'Lato', sans-serif;
+/*Color Variables*/
+
+$baseColor: #f195b2;
+$dip: #242424;
+$gray: #343434;
+$pfont: #797979;
+
+
+
+// Mixins
+@mixin transition($property: all, $duration: 400ms, $animate: linear, $delay:0s){
+    transition: $property $duration $animate $delay; 
+}
+
+// Placeholder Mixins
+@mixin placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+// Font family link
+@import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700|Montserrat:300,400,500,600,700|Open+Sans:300,400,400i,600,600i,700|Playfair+Display:400,400i,700,900|Lato');
+

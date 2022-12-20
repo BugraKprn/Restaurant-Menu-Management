@@ -1,0 +1,154 @@
+/* Client Says Area css
+============================================================================================ */
+.client_says_area{
+	background: #62c3e7;
+}
+.client_says_inner{
+	max-width: 996px;
+	margin: auto;
+	.c_says_title{
+		padding-left: 180px;
+	}
+}
+.client_says_slider{
+	.item{
+		.media{
+			.d-flex{
+				padding-right: 90px;
+				text-align: center;
+				display: block !important;
+				position: relative;
+				&:before{
+					content: "";
+					height: 105px;
+					width: 1px;
+					background: #d0edf8;
+					position: absolute;
+					right: 45px;
+					top: 40px;
+				}
+				img{
+					padding-top: 25px;
+				}
+				h3{
+					text-align: center;
+					color: #fff;
+					font-family: Arial;
+					font-size: 120px;
+					line-height: 60px;
+					margin-top: 50px;
+				}
+			}
+			.media-body{
+				p{
+					color: #fff;
+					font-size: 22px;
+					line-height: 28px;
+					letter-spacing: .66px;
+					font-family: $lora;
+					padding-top: 40px;
+					margin-bottom: 0px;
+				}
+				h5{
+					color: #fff;
+					font-size: 20px;
+					line-height: 28px;
+					letter-spacing: .66px;
+					font-family: $lora;
+					font-style: italic;
+					margin-bottom: 0px;
+					padding-top: 30px;
+				}
+			}
+		}
+	}
+	.client_says_slider{
+		position: absolute;
+		right: 0px;
+		top: -45px;
+		.owl-prev{
+			margin-right: 10px;
+		}
+		.owl-next{}
+		.owl-prev, .owl-next{
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			border: 2px solid #fff;
+			text-align: center;
+			line-height: 36px;
+			@include transition;
+			color: #fff;
+			&:hover{
+				background: $baseColor;
+				color: #fff;
+				border-color: $baseColor;
+				cursor: pointer;
+			}
+		}
+	}
+}
+/* End Client Says Area css
+============================================================================================ */
+
+/* Testimonials Area css
+============================================================================================ */
+.testimonials_item_area{
+	.testi_item_inner{
+		max-width: 1030px;
+		margin: 0px auto -75px;
+		.media{
+			margin-bottom: 75px;
+			.d-flex{
+				padding-right: 90px;
+				text-align: center;
+				display: block !important;
+				position: relative;
+				&:before{
+					content: "";
+					height: 105px;
+					width: 1px;
+					background: #a1a1a1;
+					position: absolute;
+					right: 45px;
+					top: 40px;
+				}
+				img{
+					padding-top: 25px;
+				}
+				h3{
+					text-align: center;
+					color: #e8e8e8;
+					font-family: Arial;
+					font-size: 120px;
+					line-height: 60px;
+					margin-top: 50px;
+				}
+			}
+			.media-body{
+				p{
+					color: $pfont;
+					font-size: 22px;
+					line-height: 28px;
+					letter-spacing: .66px;
+					font-family: $lora;
+					padding-top: 40px;
+					margin-bottom: 0px;
+				}
+				h5{
+					color: #3e606b;
+					font-size: 20px;
+					line-height: 28px;
+					letter-spacing: .66px;
+					font-family: $open;
+					font-style: italic;
+					margin-bottom: 0px;
+					padding-top: 30px;
+				}
+			}
+		}
+	}
+}
+/* End Testimonials Area css
+============================================================================================ */

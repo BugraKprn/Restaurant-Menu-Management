@@ -1,0 +1,497 @@
+/* Newsletter Area css
+============================================================================================ */
+.newsletter_area{
+	background: $baseColor;
+	padding: 35px 0px;
+	&.gray_bg{
+		background: #f5f5f5;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		.newsletter_inner{
+			border-top: 1px solid #d4d4d4;
+			padding-top: 55px;
+			padding-bottom: 65px;
+			.news_left_text{
+				h4{
+					color: $dip;
+				}
+			}
+			.newsletter_form{
+				.input-group{
+					.input-group-append{
+						button{
+							background: $baseColor;
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.newsletter_inner{
+	.news_left_text{
+		h4{
+			color: #fff;
+			margin-bottom: 0px;
+			font-size: 24px;
+			font-family: $play;
+			font-weight: bold;
+			max-width: 480px;
+		}
+	}
+}
+.newsletter_form{
+	.input-group{
+		box-shadow: 0px 0px 15px 0px rgba(40, 40, 40, 0.1);
+		margin-top: 3px;
+		input{
+			background: #fff;
+			border: none;
+			height: 50px;
+			padding: 0px 25px;
+			outline: none;
+			box-shadow: none;
+			@include placeholder{
+				font-size: 18px;
+				font-family: $play;
+				color: #afaeae;
+				font-weight: normal;
+			}
+		}
+		.input-group-append{
+			margin: 0px;
+			button{
+				margin-left: 0px;
+				border: none;
+				background: #e6dbdf;
+				font-size: 14px;
+				font-family: $open;
+				width: 170px;
+				font-weight: 600;
+				padding: 0px;
+				outline: none !important;
+				box-shadow: none !important;
+			}
+		}
+	}
+}
+/* End Newsletter Area css
+============================================================================================ */
+
+/* Order Now Area css
+============================================================================================ */
+.order_now_area{
+	padding-bottom: 100px;
+}
+.order_now_inner{
+	
+}
+.order_now_form{
+	padding-left: 100px;
+	padding-right: 100px;
+	background: #fff;
+	.form-group{
+		margin-bottom: 20px;
+		input{
+			border: 1px solid #e8e8e8;
+			box-shadow: none;
+			outline: none;
+			height: 48px;
+			padding: 0px 22px;
+			font-size: 16px;
+			font-family: $play;
+			color: $pfont;
+			@include placeholder{
+				font-size: 16px;
+				font-family: $play;
+				color: $pfont;
+			}
+		}
+		textarea{
+			border: 1px solid #e8e8e8;
+			box-shadow: none;
+			outline: none;
+			height: 150px;
+			padding: 15px 22px;
+			font-size: 16px;
+			font-family: $play;
+			color: $pfont;
+			resize: none;
+			@include placeholder{
+				font-size: 16px;
+				font-family: $play;
+				color: $pfont;
+			}
+		}
+		.product_select{
+			width: 100%;
+			height: 48px;
+			font-size: 16px;
+			font-family: $play;
+			color: $pfont;
+			.current{
+				line-height: 45px;
+			}
+			&:after{
+				display: none;
+			}
+			.list{
+				width: 100%;
+			}
+		}
+		.order_s_btn{
+			text-align: center;
+			margin: auto;
+			display: block;
+		}
+		&:last-child{
+			margin-top: 30px;
+			margin-bottom: 0px;
+		}
+	}
+}
+/* End Order Now Area css
+============================================================================================ */
+
+/* Contact Us Area css
+============================================================================================ */
+.contact_form_area{
+	.main_title{
+		padding-bottom: 55px;
+	}
+}
+.contact_us_form{
+	.form-group{
+		margin-bottom: 20px;
+		&:last-child{
+			margin-bottom: 0px;
+			margin-top: 20px;
+		}
+		input{
+			height: 48px;
+			border-radius: 3px;
+			border: 1px solid #ededed;
+			padding: 0px 20px;
+			font-size: 16px;
+			font-family: $open;
+			color: $pfont;
+			outline: none;
+			box-shadow: none;
+			@include placeholder{
+				font-size: 16px;
+				font-family: $open;
+				color: $pfont;
+			}
+		}
+		textarea{
+			height: 206px;
+			border-radius: 3px;
+			border: 1px solid #ededed;
+			padding: 20px 20px;
+			font-size: 16px;
+			font-family: $open;
+			color: $pfont;
+			outline: none;
+			box-shadow: none;
+			resize: none;
+			@include placeholder{
+				font-size: 16px;
+				font-family: $open;
+				color: $pfont;
+			}
+		}
+		.order_s_btn{
+			background: $baseColor;
+			font-size: 14px;
+			font-family: $open;
+			font-weight: 600;
+			padding: 0px 48px;
+		}
+	}
+}
+.contact_details{
+	.contact_d_item{
+		margin-bottom: 40px;
+		&:last-child{
+			margin-bottom: 0px;
+		}
+		h3{
+			font-size: 18px;
+			font-family: $play;
+			font-weight: bold;
+			color: #3e606b;
+			margin-bottom: 15px;
+		}
+		p{
+			font-size: 16px;
+			font-family: $open;
+			color: $pfont;
+			line-height: 26px;
+			margin-bottom: 0px;
+			& + p{
+				margin-top: 10px;
+			}	
+		}
+		h5{
+			font-size: 18px;
+			font-family: $play;
+			font-weight: bold;
+			color: #3e606b;
+			a{
+				font-size: 16px;
+				font-family: $open;
+				color: $pfont;
+				line-height: 26px;
+				font-weight: normal;
+			}
+			& + h5{
+				margin-bottom: 0px;
+			}
+		}
+	}
+}
+.map_area{
+	.mapBox{
+		min-height: 485px;
+	}
+}
+/* End Contact Us Area css
+============================================================================================ */
+
+/* Search Popup Area css
+============================================================================================ */
+.search_area{
+    position: relative;
+    max-width: 950px;
+    margin: auto;
+    .search_box_inner{
+        background: #1a1a1c;
+        padding: 100px 60px;
+        display: block;
+        overflow: hidden;
+        h3{
+            padding-bottom: 20px;
+            font-family: $play;
+            font-size: 22px;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: .48px;
+        }
+        .input-group{
+            display: block;
+            position: relative;
+            input{
+                background: transparent;
+                border-radius: 0px;
+                outline: none;
+                height: 50px;
+                padding: 0px;
+                border: none;
+                outline: none;
+                box-shadow: none;
+                border-bottom: 2px solid #fff;
+                color: #666;
+                font-family: $play;
+                font-size: 14px;
+                letter-spacing: .28px;
+				width: 100%;
+                @include placeholder{
+                    color: #666;
+                    font-family: $play;
+                    font-size: 14px;
+                    letter-spacing: .28px;
+                }
+            }
+            .input-group-btn{
+                position: absolute;
+                right: 5px;
+                top: 12px;
+                z-index: 4;
+                .btn-default{
+                    padding: 0px;
+                    border: none;
+                    outline: none !important;
+                    box-shadow: none !important;
+                    background: transparent;
+                    color: #666;
+                    font-family: $play;
+                    font-size: 16px;
+                    letter-spacing: .28px;
+                }
+            }
+        }
+    }
+    .mfp-close{
+        right: 0px;
+        color: #fff;
+    }
+}
+
+/* start state */
+.my-mfp-zoom-in .zoom-anim-dialog {
+	opacity: 0;
+
+	-webkit-transition: all 0.2s ease-in-out; 
+	-moz-transition: all 0.2s ease-in-out; 
+	-o-transition: all 0.2s ease-in-out; 
+	transition: all 0.2s ease-in-out; 
+
+
+
+	-webkit-transform: scale(0.8); 
+	-moz-transform: scale(0.8); 
+	-ms-transform: scale(0.8); 
+	-o-transform: scale(0.8); 
+	transform: scale(0.8); 
+}
+
+/* animate in */
+.my-mfp-zoom-in.mfp-ready .zoom-anim-dialog {
+	opacity: 1;
+
+	-webkit-transform: scale(1); 
+	-moz-transform: scale(1); 
+	-ms-transform: scale(1); 
+	-o-transform: scale(1); 
+	transform: scale(1); 
+}
+
+/* animate out */
+.my-mfp-zoom-in.mfp-removing .zoom-anim-dialog {
+	-webkit-transform: scale(0.8); 
+	-moz-transform: scale(0.8); 
+	-ms-transform: scale(0.8); 
+	-o-transform: scale(0.8); 
+	transform: scale(0.8); 
+
+	opacity: 0;
+}
+
+/* Dark overlay, start state */
+.my-mfp-zoom-in.mfp-bg {
+	opacity: 0;
+	-webkit-transition: opacity 0.3s ease-out; 
+	-moz-transition: opacity 0.3s ease-out; 
+	-o-transition: opacity 0.3s ease-out; 
+	transition: opacity 0.3s ease-out;
+}
+/* animate in */
+.my-mfp-zoom-in.mfp-ready.mfp-bg {
+	opacity: 0.8;
+}
+/* animate out */
+.my-mfp-zoom-in.mfp-removing.mfp-bg {
+	opacity: 0;
+}
+
+
+
+/**
+ * Fade-move animation for second dialog
+ */
+
+/* at start */
+.my-mfp-slide-bottom .zoom-anim-dialog {
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+
+	-webkit-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	-moz-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	-ms-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	-o-transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+	transform: translateY(-20px) perspective( 600px ) rotateX( 10deg );
+
+}
+
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
+	opacity: 1;
+	-webkit-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	-moz-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	-ms-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	-o-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+	transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
+}
+
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
+	opacity: 0;
+
+	-webkit-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	-moz-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	-ms-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	-o-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+	transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
+}
+
+/* Dark overlay, start state */
+.my-mfp-slide-bottom.mfp-bg {
+	opacity: 0;
+
+	-webkit-transition: opacity 0.3s ease-out; 
+	-moz-transition: opacity 0.3s ease-out; 
+	-o-transition: opacity 0.3s ease-out; 
+	transition: opacity 0.3s ease-out;
+}
+/* animate in */
+.my-mfp-slide-bottom.mfp-ready.mfp-bg {
+	opacity: 0.8;
+}
+/* animate out */
+.my-mfp-slide-bottom.mfp-removing.mfp-bg {
+	opacity: 0;
+}
+/* End Search Popup Area css
+============================================================================================ */
+
+
+
+/* Contact Success and error Area css
+============================================================================================ */
+.modal-message{
+    .modal-dialog{
+        position: absolute;
+        top: 36%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) !important; 
+        margin: 0px;
+        max-width: 500px;
+        width: 100%;
+        .modal-content{
+            .modal-header{
+                text-align: center;
+                display: block;
+                border-bottom: none;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                .close{
+                    position: absolute;
+                    right: -15px;
+                    top: -15px;
+                    padding: 0px;
+                    color: #fff;
+                    opacity: 1;
+                    cursor: pointer;
+                }
+                h2{
+                    display: block;
+                    text-align: center;
+                    color: $baseColor;
+                    padding-bottom: 10px;
+					font-family: $play;
+                }
+                p{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+/* End Contact Success and error Area css
+============================================================================================ */

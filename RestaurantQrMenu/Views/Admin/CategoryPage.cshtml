@@ -1,0 +1,181 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+}
+<h1 class="None">Kategori Ayarları</h1>
+<div id="gridContainer" dx-data-grid="dataGridOptions"></div>
+<script type="text/javascript">
+    var OrionApp = angular.module('OrionApp', ['dx'])
+        .controller('OrionController', function ($scope) {
+            var Url = "";
+            var settingStore = new DevExpress.data.CustomStore({
+                key: "Id",
+                load: function () {
+                    return sendRequest("/getcategory");
+                },
+                insert: function (values) {
+                    return sendRequest("@Url.Action("OrionSave","Admin")", "POST", {
+                        values: JSON.stringify(values),
+                        tablo: "Category"
+                    });
+                },
+                update: function (key, values, tablo) {
+                    return sendRequest("@Url.Action("OrionSave","Admin")", "POST", {
+                        key: key,
+                        values: JSON.stringify(values),
+                        tablo: "Category"
+                    });
+                },
+                remove: function (key) {
+                    return sendRequest("@Url.Action("OrionDelete","Admin")", "POST", {
+                        key: key,
+                        tablo: "Category"
+                    });
+                }
+            });
+            $scope.refreshMode = "reshape";
+            $scope.requests = [];
+
+            $scope.dataGridOptions = {
+                bindingOptions: {
+                    "editing.refreshMode": "refreshMode"
+                },
+                dataSource: settingStore,
+                repaintChangesOnly: true,
+                showColumnLines: true,
+                showRowLines: true,
+                rowAlternationEnabled: true,
+                showBorders: true,
+                filterRow: { visible: true },
+                filterPanel: { visible: true },
+                headerFilter: { visible: true },
+                allowColumnResizing: true,
+                columnAutoWidth: true,
+                width: "100%",
+                paging: {
+                    pageSize: 10
+                },
+                columnChooser: {
+                    enabled: false,
+                    mode: "dragAndDrop" // or "select"
+                },
+                pager: {
+                    showPageSizeSelector: true,
+                    allowedPageSizes: [25, 50, 75],
+                    showInfo: true
+                },
+                editing: {
+                    mode: "popup",
+                    allowUpdating: true,
+                    allowDeleting: true,
+                    useIcons: true,
+                    popup: {
+                        title: "Kategori",
+                        showTitle: true,
+                        width: "100%",
+                        height: "100%",
+                        position: {
+                            my: "top",
+                            at: "top",
+                            of: window
+                        }
+                    },
+                    form: {
+                        items: [
+                            { dataField: "CategoryName" },
+                            { dataField: "CategoryIcon" },
+                            { dataField: "CategoryOrder" },
+                            { dataField: "CategoryStatus" }
+                        ]
+                    }
+                },
+                onDataErrorOccurred(e) {
+                    this.dataErrorMessage = "The server returned an error: " + `"${e.error.httpStatus} => ${e.error.message}".`;
+                },
+                columns: [
+                    {
+                        dataField: "Id",
+                        caption: "Kayıt No",
+                        width: 100
+                    },
+                    {
+                        dataField: "CategoryName",
+                        caption: "Ad"
+                    },
+                    {
+                        dataField: "CategoryIcon",
+                        caption: "ikon",
+                        visible: false
+                    },
+                    {
+                        dataField: "CategoryStatus",
+                        caption: "Durum"
+                    },
+                    {
+                        dataField: "CategoryOrder",
+                        caption: "Sıra",
+                        visible: false
+                    }],
+                onToolbarPreparing: function (e) {
+                    var dataGrid = e.component;
+                    e.toolbarOptions.items.unshift(
+                        {
+                            location: "after",
+                            widget: "dxButton",
+                            options: {
+                                icon: "refresh",
+                                text: "Yenile",
+                                onClick: function () {
+                                    dataGrid.refresh();
+                                }
+                            }
+                        },
+                        {
+                            location: "after",
+                            widget: "dxButton",
+                            options: {
+                                icon: "add",
+                                text: "Ekle",
+                                onClick: function () {
+                                    dataGrid.addRow();
+                                }
+                            }
+                        }
+                    );
+                },
+
+            };
+
+            $scope.buttonOptions = {
+                text: "Clear",
+                onClick: function () {
+                    $scope.requests = [];
+                }
+            };
+
+
+            function sendRequest(url, method, data) {
+                var d = $.Deferred();
+
+                method = method || "GET";
+
+                //logRequest(method, url, data);
+
+                $.ajax(url, {
+                    method: method || "GET",
+                    data: data,
+                    cache: false,
+                    xhrFields: { withCredentials: true }
+                }).done(function (result) {
+                    d.resolve(method === "GET" ? result.Data : result.Data);
+                }).fail(function (xhr) {
+                    d.reject(xhr.responseJSON ? xhr.responseJSON.Message : xhr.statusText);
+                });
+
+                return d.promise();
+            }
+        });
+
+
+    DevExpress.localization.locale(navigator.language || navigator.browserLanguage);
+
+</script>

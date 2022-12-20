@@ -1,0 +1,54 @@
+/* Bakery Video Area css
+============================================================================================ */
+.bakery_video_area{
+	background: url(../img/video/video-1.jpg) no-repeat scroll center center;
+	background-size: cover;
+	padding: 120px 0px;
+	.video_inner{
+		text-align: center;
+		color: #fff;
+		h3{
+			font-size: 70px;
+			font-family: $play;
+			font-weight: bold;
+			margin: 0px;
+		}
+		p{
+			font-size: 25px;
+			line-height: 39px;
+			font-family: $lora;
+			max-width: 900px;
+			margin: 10px auto 30px;
+		}
+		.media{
+			max-width: 250px;
+			margin: auto;
+			.d-flex{
+				display: inline-block;
+				padding-right: 20px;
+				i{
+					font-size: 64px;
+					line-height: 64px;
+					color: #fff;
+					&:before{
+						font-size: 64px;
+					}
+				}
+			}
+			.media-body{
+				text-align: left;
+				vertical-align: middle;
+				align-self: center;
+				h5{
+					font-size: 16px;
+					line-height: 26px;
+					color: #fff;
+					font-family: $open;
+					margin-bottom: 0px;
+				}
+			}
+		}
+	}
+}
+/* End Bakery Video Area css
+============================================================================================ */

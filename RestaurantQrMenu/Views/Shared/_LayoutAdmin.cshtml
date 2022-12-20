@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin - @ViewData["Title"]</title>
+    <link rel="icon" href="~/img/fav-icon.png" type="image/x-icon" />
+    <script src="@Url.Content("~/js/jquery.min.js")"></script>
+    <script>window.jQuery || document.write(decodeURIComponent('%3Cscript src="@Url.Content("~/js/jquery.min.js")"%3E%3C/script%3E'))</script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/css/devextreme/dx.common.css")" />
+    <link rel="stylesheet" type="text/css" id="template" href="@Url.Content("~/css/dark.css")" />
+    <script src="@Url.Content("~/js/angular.min.js")"></script>
+    <script>window.angular || document.write(decodeURIComponent('%3Cscript src="@Url.Content("~/js/angular.min.js")"%3E%3C\/script%3E'))</script>
+    <script src="@Url.Content("~/Devextreme/cldr.min.js")"></script>
+    <script src="@Url.Content("~/Devextreme/event.min.js")"></script>
+    <script src="@Url.Content("~/Devextreme/supplemental.min.js")"></script>
+    <script src="@Url.Content("~/Devextreme/globalize.min.js")"></script>
+    <script src="@Url.Content("~/Devextreme/message.min.js")"></script>
+    <script src="@Url.Content("~/Devextreme/number.min.js")"></script>
+    <script src="@Url.Content("~/Devextreme/currency.min.js")"></script>
+    <script src="@Url.Content("~/Devextreme/date.min.js")"></script>
+    <!-- DevExtreme library -->
+    <script src="@Url.Content("~/js/dx.all.js")"></script>
+    <!-- Dictionary files for German and Russian languages -->
+    <script src="@Url.Content("~/js/dx.messages.tr.js")"></script>
+    <!-- Common and language-specific CLDR data -->
+    <script src="@Url.Content("~/Devextreme/supplemental.js")"></script>
+    <script src="@Url.Content("~/Devextreme/tr.js")"></script>
+    <script src="@Url.Content("~/Devextreme/dx.aspnet.data.js")"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.6/quill.min.js"></script>
+
+    <link rel="stylesheet" type="text/css"  href="@Url.Content("~/css/deneme.css")" />
+
+    <style type="text/css">
+        .demo-container, #page {
+            height: 100%;
+            padding: 0px 0px 10px 0px;
+        }
+
+
+            #page .content {
+                min-height: 500px;
+                padding-top: 10px;
+            }
+
+            #page .left-side-bar {
+                padding-top: 10px;
+                padding-right: 10px;
+            }
+
+            #page .right-side-bar {
+                background-color: rgba(119, 199, 231, 0.80);
+            }
+
+            #page .footer {
+            }
+
+        .item {
+            height: 100%;
+        }
+
+        #page p {
+            font-size: 20px;
+            padding-top: 0px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="dx-viewport">
+    <div class="demo-container" ng-app="OrionApp" ng-controller="OrionController">
+        <div class="header" data-options="dxItem: {
+                    location: [{
+                        row: 0,
+                        col: 0,
+                        colspan: 3,
+                        screen: 'lg'
+                    }, {
+                        row: 0,
+                        col: 0,
+                        colspan: 2,
+                        screen: 'sm'
+                    }]
+                }">
+            <div id="toolbar"></div><br /><br />
+        </div>
+        <div id="drawer">
+
+            <div class="content" data-options="dxItem: {
+                    location: [{
+                        row: 1,
+                        col: 0,
+                        screen: 'lg'
+                    }, {
+                        row: 1,
+                        col: 0,
+                        screen: 'sm'
+                    }]
+                }" style="padding-left:10px;padding-top:10px;">
+
+                @RenderBody()
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+
+            if (localStorage.getItem("position") == null) {
+                localStorage.setItem("position", "left");
+            }
+
+            var continents = [
+                {
+                    id: "0",
+                    text: "Dashboard",
+                    expanded: false,
+                    url: "@Url.Action("Index","Admin")"
+                },
+                {
+                    id: "1",
+                    text: "Yönetim",
+                    expanded: false,
+                    items: [
+                        {
+                            id: "1_0",
+                            text: "Kategori Ayarları",
+                            url: "@Url.Action("CategoryPage","Admin")"
+                        },
+                        {
+                            id: "1_1",
+                            text: "Ürün Ayarları",
+                            url: "@Url.Action("ProductPage","Admin")"
+                        },
+                        {
+                            id: "1_2",
+                            text: "Satış Ve Hareket",
+                            url: "@Url.Action("SalesPage","Admin")"
+                        }
+                    ]
+                }];
+            var drawer = $("#drawer").dxDrawer({
+                opened: true,
+                position: localStorage.getItem("position"),
+                height: "%100",
+                //closeOnOutsideClick: true,
+                template: function () {
+                    var $list = $("<div>").width(200).addClass("panel-list");
+
+                    return $list.dxTreeView({
+                        dataSource: continents,
+                        selectionMode: "single",
+                        selectByClick: true,
+                        searchEnabled: true,
+                        focusStateEnabled: true,
+                        onItemSelectionChanged: function (e) {
+                            var item = e.node.itemData;
+                            if (item.url != undefined) {
+                                window.location.href = item.url;
+                            }
+
+                        }
+                    });
+                }
+            }).dxDrawer("instance");
+            var templates = [{
+                id: "0",
+                text: "Tema seçiniz"
+            }, {
+                id: "dark",
+                text: "Dark"
+            }, {
+                id: "light",
+                text: "Light"
+            }, {
+                id: "greenmist",
+                text: "Greenmist"
+            }, {
+                id: "carmine",
+                text: "Carmine"
+            }, {
+                id: "darkmoon",
+                text: "Darkmoon"
+            }, {
+                id: "darkviolet",
+                text: "Darkviolet"
+            }, {
+                id: "softblue",
+                text: "Softblue"
+            }
+            ];
+            var profileSettings = [
+                { id: 1, name: "Logout", text: "Oturumu Kapat", icon: "runner" }
+            ];
+            var toolbar = $("#toolbar").dxToolbar({
+                items: [
+                    {
+                        widget: "dxButton",
+                        location: "before",
+                        options:
+                        {
+                            icon: "hidepanel",
+                            onClick: function () {
+                                drawer.toggle();
+                                if (toolbar._options.items[0].options.icon == "hidepanel") {
+                                    toolbar._options.items[0].options.icon = "showpanel";
+                                    toolbar.repaint();
+                                }
+                                else {
+                                    toolbar._options.items[0].options.icon = "hidepanel";
+                                    toolbar.repaint();
+                                }
+
+                                //$("#drawer").hide();
+                            }
+                        }
+                    },
+                    {
+                        widget: "dxButton",
+                        location: "before",
+                        options:
+                        {
+                            icon: (localStorage.getItem("position") == "left" ? "pinright" : "pinleft"),
+                            onClick: function () {
+                                if (localStorage.getItem("position") == "left") {
+                                    drawer.option("position", "right");
+                                    localStorage.setItem("position", "right");
+                                    toolbar._options.items[1].options.icon = "pinleft";
+                                    toolbar.repaint();
+                                }
+                                else {
+                                    drawer.option("position", "left");
+                                    localStorage.setItem("position", "left");
+                                    toolbar._options.items[1].options.icon = "pinright";
+                                    toolbar.repaint();
+                                }
+
+                            }
+                        }
+                    },
+                    {
+                        location: 'after',
+                        widget: 'dxSelectBox',
+                        locateInMenu: 'auto',
+                        options: {
+                            width: 140,
+                            items: templates,
+                            valueExpr: "id",
+                            displayExpr: "text",
+                            value: window.localStorage.getItem("dx-theme") == null ? templates[0].id : window.localStorage.getItem("dx-theme").replace(".css", ""),
+                            onValueChanged: function (args) {
+                                if (args.value === "0") {
+
+                                }
+                                else {
+                                    window.localStorage.setItem("dx-theme", args.value + ".css");
+                                    window.location.reload();
+                                }
+                            }
+                        }
+                    },
+                    {
+                        location: 'center',
+                        locateInMenu: 'never',
+                        template: function () {
+                            return $("<div class='toolbar-label'><b>Site Yönetimi</b></div>");
+                        }
+                    },
+                    {
+                        widget: 'dxDropDownButton',
+                        location: 'after',
+                        options: {
+
+                            items: profileSettings,
+                            splitButton: true,
+                            onButtonClick: function (e) {
+                                DevExpress.ui.notify("Go to " + e.component.option("text") + "'s profile", "success", 600);
+                            },
+                            onItemClick: function (e) {
+                                if (e.itemData.name === "Logout") {
+                                    $.ajax({
+                                        type: "POST",
+                                        dataType: "json",
+                                        url: "/logout",
+                                        success: function (result) {
+                                            if (result.Success) {
+                                                window.location.href = "/";
+                                            }
+                                            else {
+                                                DevExpress.ui.notify(result.ErrorMessage, "error", 600);
+                                            }
+                                        }
+                                    });
+                                }
+                                else
+                                    DevExpress.ui.notify(e.itemData.name, "success", 600);
+                            },
+                            text: "@User.Identity.Name",
+                            //icon: "images/gym/coach-woman.png",
+                            displayExpr: "text",
+                            keyExpr: "id",
+                            useSelectMode: false,
+                            dropDownOptions: {
+                                width: 250
+                            }
+                        }
+
+                    }
+                ]
+            }).dxToolbar("instance");
+        });
+    </script>
+    <script>
+        $(function () {
+            if (window.localStorage.getItem("dx-theme") == null)
+                $("#template").attr("href", "@Url.Content("~/css/light.css")");
+            else
+                $("#template").attr("href", "@Url.Content("~/css/")" + window.localStorage.getItem("dx-theme"));
+
+
+        });
+
+    </script>
+
+</body>
+</html>

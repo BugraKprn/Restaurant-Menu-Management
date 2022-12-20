@@ -1,0 +1,80 @@
+/* Main Slider Area css
+============================================================================================ */
+.main_slider_area{
+	.rev_slider{
+		ul{
+			li{
+				.slider_text_box{
+					.first_text{
+						color: #fff;
+						font-family: $play;
+						font-weight: bold !important;
+						&.black{
+							color: #29263a;
+						}
+						&.pink{
+							color: #753375;
+						}
+					}
+					.secand_text{
+						color: #fff;
+						font-family: $play;
+						font-style: italic;
+						&.black{
+							color: #000000;
+						}
+					}
+					.main_btn{
+						background: #fff;
+						font-size: 18px;
+						color: #3e606b;
+						display: inline-block;
+						font-weight: 600;
+						font-family: $open;
+						padding: 0px 43px;
+						line-height: 52px;
+						border-radius: 26px;
+						transition: all 300ms linear !important;
+						&:hover{
+							background: $baseColor;
+							color: #fff;
+						}
+					}
+					.now_btn{
+						display: inline-block;
+						padding: 0px 29px;
+						background: #e2a062;
+						border-radius: 4px;
+						color: #fff;
+						font-size: 17px;
+						line-height: 50px;
+						font-weight: 600;
+						font-family: $open;
+						transition: all 300ms linear !important;
+						&:hover{
+							background: $baseColor;
+							color: #fff;
+						}
+					}
+					.price{
+						h3{
+							background: #fff;
+							height: 126px;
+							width: 126px;
+							border-radius: 50%;
+							text-align: center !important;
+							line-height: 122px;
+							color: $dip;
+							font-family: $play;
+							font-weight: bold;
+							font-style: italic;
+							font-size: 45px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* End Main Slider Area css
+============================================================================================ */

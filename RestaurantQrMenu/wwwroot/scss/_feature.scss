@@ -1,0 +1,542 @@
+/* Cake Welcome Feature Area css
+============================================================================================ */
+.welcome_bakery_area{
+	background: url(../img/welcome-bg.jpg) no-repeat scroll center center;
+	background-size: cover;
+	position: relative;
+	z-index: 3;
+	&:before{
+		content: "";
+		background: url(../img/w-left-techture.png) no-repeat scroll center center;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		height: 685px;
+		width: 237px;
+		z-index: -1;
+	}
+	&:after{
+		content: "";
+		background: url(../img/w-right-techture.png) no-repeat scroll center center;
+		position: absolute;
+		right: 0px;
+		top: 0px;
+		height: 701px;
+		width: 250px;
+		z-index: -1;
+	}
+}
+.wel_bakery_two{
+	.welcome_bakery_inner{
+		border: none;
+	}
+}
+.welcome_bakery_inner{
+	border-bottom: 1px solid #fff;
+	border-bottom: 1px solid #dbdbdb;
+	.main_title{
+		padding-bottom: 25px;
+	}
+	.welcome_left_text{
+		p{
+			line-height: 26px;
+			color: $pfont;
+			font-size: 16px;
+			font-family: $open;
+			margin-bottom: 35px;
+		}
+	}
+	.welcome_img{
+		text-align: right;
+	}
+}
+
+.cake_feature_inner{
+	padding: 80px 0px 100px 0px;
+}
+.cake_feature_slider{
+	.cake_feature_slider{
+		position: absolute;
+		right: 0px;
+		top: -113px;
+		.owl-prev{
+			margin-right: 10px;
+		}
+		.owl-next{}
+		.owl-prev, .owl-next{
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			border: 2px solid #d0d0d0;
+			text-align: center;
+			line-height: 36px;
+			@include transition;
+			&:hover{
+				background: $baseColor;
+				color: #fff;
+				border-color: $baseColor;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.cake_feature_item{
+	background: #fff;
+	overflow: hidden;
+	border-radius: 5px;
+	box-shadow: 0px 0px 15px 0px rgba(40, 40, 40, 0.08);
+	text-align: center;
+	padding-bottom: 30px;
+	.cake_img{
+		position: relative;
+		cursor: pointer;
+		overflow: hidden;
+		img{
+			transition: all 300ms ease;
+		}
+		&:before{
+			content: "";
+			background: rgba(0, 0, 0, .5);
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+			transition: all 300ms ease;
+			z-index: 1;
+			opacity: 0;
+		}
+		&:hover{
+			img{
+				transform: scale(1.05);
+			}
+			&:before{
+				opacity: 1;
+			}
+		}
+	}
+	.cake_text{
+		position: relative;
+		h4{
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			color: $gray;
+			font-size: 26px;
+			font-family: $play;
+			font-style: italic;
+			background: #fff;
+			display: inline-block;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			top: -35px;
+			line-height: 68px;
+			margin-bottom: 0px;
+			z-index: 2;
+		}
+		h3{
+			font-size: 18px;
+			color: $gray;
+			font-family: $play;
+			margin-bottom: 22px;
+			padding-top: 35px;
+		}
+		.pest_btn{
+			
+		}
+	}
+}
+
+
+.cake_feature_main{
+	background: #fff;
+	position: relative;
+	.cake_feature_row{
+		margin-bottom: -50px;
+		.cake_feature_item{
+			margin-bottom: 50px;
+		}
+	}
+}
+.pink_cake_feature{
+	background: $baseColor;
+	&:before{
+		display: none;
+	}
+	&:after{
+		display: none;
+	}
+	.cake_feature_inner{
+		position: relative;
+		.title_view_all{
+			overflow: hidden;
+			.float-right{
+				.pest_btn{
+					line-height: 46px;
+					background: #fff;
+					color: $pfont;
+					font-size: 14px;
+					font-family: $open;
+					@include transition;
+					margin-top: 25px;
+					&:before{
+						background: $baseColor;
+					}
+					&:hover{
+						color: $baseColor;
+					}
+				}
+			}
+		}
+		.cake_feature_slider{
+			position: relative;
+			.cake_feature_slider{
+				position: relative;
+				left: 0px;
+				top: 0px;
+				text-align: center;
+				margin-top: 50px;
+				.owl-prev, .owl-next{
+					border-color: #fff;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+.cake_feature_four{
+	background: #f5f5f5;
+	.cake_feature_slider{
+		.cake_feature_slider{
+			position: relative;
+			top: 0px;
+			left: 0px;
+			text-align: center;
+			margin-top: 45px;
+		}
+	}
+}
+
+.our_cakes_area{
+	.cake_feature_row{
+		.cake_feature_item{
+			margin-bottom: 30px;
+		}
+	}
+	.main_title{
+		h5{
+			font-style: normal;
+		}
+	}
+}
+
+
+/* End Cake Welcome Feature Area css
+============================================================================================ */
+
+/* Special Recipe Area css
+============================================================================================ */
+.special_recipe_area{
+	background: url(../img/recipe/special-recipe.jpg) no-repeat fixed center center;
+	background-size: cover;
+	padding: 85px 0px;
+	position: relative;
+}
+.special_recipe_slider{
+	position: static;
+	.item{
+		.media{
+			.d-flex{
+				padding-right: 150px;
+				position: relative;
+				&:before{
+					content: "";
+					height: 235px;
+					width: 1px;
+					background: #bcbfc1;
+					position: absolute;
+					right: 50px;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+			.media-body{
+				vertical-align: middle;
+				align-self: center;
+				h4{
+					font-size: 48px;
+					font-family: $play;
+					font-weight: bold;
+					color: #fff;
+					margin-bottom: 20px;
+				}
+				p{
+					font-size: 20px;
+					color: #fff;
+					font-family: $lora;
+					font-style: italic;
+					line-height: 30px;
+					padding-right: 80px;
+					margin-bottom: 32px;
+				}
+			}
+		}
+	}
+	.owl-dots{
+		position: absolute;
+		right: 50px;
+		top: 50%;
+		transform: translateY(-50%);
+		.owl-dot{
+			height: 10px;
+			width: 10px;
+			border: 1px solid #fff;
+			border-radius: 50%;
+			margin-bottom: 8px;
+			&:last-child{
+				margin-bottom: 0px;
+			}
+			&.active{
+				background: #fff;
+			}
+		}
+	}
+}
+/* End Special Recipe Area css
+============================================================================================ */
+
+/* Error Page Area css
+============================================================================================ */
+.error_area{
+	text-align: center;
+	background: url(../img/error-bg.jpg) no-repeat scroll center center;
+	background-size: cover;
+	min-height: 834px;
+	display: flex;
+	position: relative;
+	z-index: 2;
+	&:before{
+		content: "";
+		background: rgba(0, 0, 0, .7);
+		position: absolute;
+		left: 0px;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
+	.error_inner{
+		display: flex;
+		width: 100%;
+		height: 100%;
+		.error_inner_text{
+			align-self: center;
+			vertical-align: middle;
+			text-align: center;
+			width: 100%;
+			color: #fff;
+			margin-top: -90px;
+			h3{
+				font-size: 200px;
+				font-family: $play;
+				font-weight: bold;
+				margin-bottom: 15px;
+				display: block;
+				vertical-align: middle;
+				align-self: center;
+			}
+			h4{
+				font-size: 60px;
+				font-family: $play;
+				font-weight: bold;
+				margin-bottom: 12px;
+			}
+			h5{
+				font-size: 27px;
+				font-family: $play;
+				font-style: italic;
+				margin-bottom: 40px;
+			}
+			.pink_btn{
+				border-radius: 3px;
+				line-height: 74px;
+				font-size: 24px;
+				padding: 0px 55px;
+			}
+		}
+	}
+}
+/* End Error Page Area css
+============================================================================================ */
+
+/* Faq Area css
+============================================================================================ */
+.faq_area{
+	.main_title{
+		
+	}
+	.search_form{
+		background: #f2f2f2;
+		border-radius: 7px;
+		padding: 8px;
+		display: block;
+		position: relative;
+		margin-bottom: 50px;
+		input{
+			width: 100%;
+			display: block;
+			border-radius: 4px !important;
+			border: 1px solid #e0e0e0;
+			height: 60px;
+			padding: 0px 20px;
+			outline: none;
+			box-shadow: none;
+			@include placeholder{
+				font-size: 18px;
+				color: $pfont;
+				font-family: $play;
+			}
+		}	
+		.input-group-append{
+			position: absolute;
+			right: 25px;
+			top: 50%;
+			transform: translateY(-50%);
+			button{
+				padding: 0px;
+				border-radius: 0px;
+				border: none;
+				color: $pfont;
+			}
+		}
+	}
+}
+.faq_collaps{
+	.left_side_collaps{
+		.card{
+			border: none;
+			border-radius: 0px;
+			margin-bottom: 30px;
+			.card-header{
+				padding: 0px;
+				background: transparent;
+				border: none;
+				button{
+					padding: 0px;
+					white-space: normal;
+					text-align: left;
+					position: relative;
+					padding-left: 30px;
+					text-decoration: none;
+					color: #3e606b;
+					font-size: 22px;
+					font-family: $play;
+					font-weight: bold;
+					i{
+						display: none;
+						position: absolute;
+						left: 0px;
+						top: -4px;
+						color: #3e606b;
+						font-weight: bold;
+						font-size: 28px;
+						font-family: $mon;
+						& + i{
+							display: inline-block;
+						}
+					}
+					&.collapsed{
+						i{
+							display: inline-block;
+							& + i{
+								display: none;
+							}
+						}
+					}
+				}
+			}
+			.card-body{
+				font-size: 16px;
+				color: $pfont;
+				line-height: 28px;
+				font-family: $open;
+				padding: 15px 30px 15px 30px;
+			}
+		}
+	}
+}
+
+.faq_form_area{
+	background: #f8f8f8;
+	position: relative;
+	padding: 90px 0px 100px 0px;
+	overflow: hidden;
+	&:before{
+		content: "";
+		background: url(../img/faq-form-right.png) no-repeat scroll center center;
+		width: 545px;
+		height: 709px;
+		position: absolute;
+		right: 0px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.faq_left_form{
+		.faq_title{
+			padding-bottom: 40px;
+			h3{
+				font-size: 36px;
+				color: #3e606b;
+				font-family: $play;
+				font-weight: bold;
+			}
+		}
+		.contact_us_form{
+			.form-group{
+				input{
+					border: none;
+					border-bottom: 2px solid #e3e3e3;
+					background: transparent;
+					padding: 0px;
+					border-radius: 0px;
+					font-size: 18px;
+					font-family: $play;
+					color: rgba(0, 0, 0, .70);
+					@include placeholder{
+						font-size: 18px;
+						font-family: $play;
+						color: rgba(0, 0, 0, .70);
+					}
+				}
+				textarea{
+					border: none;
+					border-bottom: 2px solid #e3e3e3;
+					background: transparent;
+					padding: 6px 0px;
+					border-radius: 0px;
+					font-size: 18px;
+					font-family: $play;
+					color: rgba(0, 0, 0, .70);
+					@include placeholder{
+						font-size: 18px;
+						font-family: $play;
+						color: rgba(0, 0, 0, .70);
+					}
+				}
+				.pest_btn{
+					width: 170px;
+					height: 50px;
+					border-radius: 25px;
+					font-size: 16px;
+				}	
+			}
+		}
+	}
+}
+
+/* End Faq Area css
+============================================================================================ */
