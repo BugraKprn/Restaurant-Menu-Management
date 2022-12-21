@@ -29,7 +29,7 @@ namespace RestaurantQrMenu.Controllers
             ViewData["Title"] = "Menu";
             MenuDto model = new MenuDto()
             {
-                ProductModel = _productService.GetbyCategory(1),
+                ProductModel = _productService.GetList(),
                 CategoryModel = _categoryService.GetByTrueCategory()
             };
             return View(model);
